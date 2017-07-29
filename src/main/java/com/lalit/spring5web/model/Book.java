@@ -3,10 +3,7 @@ package com.lalit.spring5web.model;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Book {
@@ -18,6 +15,9 @@ public class Book {
 	private String isbn;
 	private String publisher;
 	
+	@ManyToMany
+	@JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"),
+    inverseJoinColumns = @JoinColumn(name = "author_id"))
 	private Set<Author> authors = new HashSet<>();
 	
 	public Book() {
