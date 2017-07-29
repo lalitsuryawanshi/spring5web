@@ -24,4 +24,4 @@ nbdist/
 .nb-gradle/
 
 ### System Files ###
-*/DS_Store/
+.DS_Store
