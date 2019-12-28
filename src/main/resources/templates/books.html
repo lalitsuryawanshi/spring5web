@@ -1,22 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>Available Books</title>
-</head>
+<html lang="en"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="fragments/default">
 <body>
-	<h1>Book List</h1>
-	<table>
+<main>
+<div id="page" layout:fragment="content">
+	<div class="alert alert-success">
+		<h4>Book List</h4>
+	</div>
+	<table class="table">
+		<thead class="thead-dark">
 		<tr>
 			<th>ID</th>
 			<th>Title</th>
 			<th>Publisher</th>
 		</tr>
+		</thead>
+		<tbody>
 		<tr th:each="book : ${books}">
 			<td th:text="${book.id}"></td>
 			<td th:text="${book.title}"></td>
 			<td th:text="${book.publisher.name}"></td>
 		</tr>
+		</tbody>
 	</table>
+</div>
+</main>
 </body>
 </html>

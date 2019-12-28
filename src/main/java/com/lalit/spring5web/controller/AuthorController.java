@@ -21,4 +21,11 @@ public class AuthorController {
 		model.addAttribute("authors", authorRepository.findAll());
 		return "authors";
 	}
+
+	@RequestMapping("/home")
+	public String getHome(Model model) {
+
+		model.addAttribute("authors", authorRepository.findAll());
+		return "home";
+	}
 }
